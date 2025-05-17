@@ -110,7 +110,7 @@ The dashboard presents:
 | 1    | Project Overview              | Goal, data summary, sensor trends         |
 | 2    | Model Performance Summary     | MAE, RMSE, R² for all models              |
 | 3    | Actual vs Predicted RUL       | Scatter plots: true vs predicted RUL      |
-| 5    | Sensor Insights               | Interactive engine + sensor trends        |
+| 4    | Sensor Insights               | Interactive engine + sensor trends        |
 
 File: `RUL_dashboard.pbix`
 
