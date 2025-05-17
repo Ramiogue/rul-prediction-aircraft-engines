@@ -1,8 +1,8 @@
-# 🛠 Remaining Useful Life (RUL) Prediction for Aircraft Engines
+#  Remaining Useful Life (RUL) Prediction for Aircraft Engines
 
 ---
 
-## 📌 Executive Summary
+## Executive Summary
 
 This project focuses on predicting the Remaining Useful Life (RUL) of aircraft engines using NASA’s CMAPSS dataset. RUL estimation is crucial for predictive maintenance — enabling industries to detect early signs of failure, optimize maintenance schedules, and avoid costly breakdowns.
 
@@ -15,79 +15,79 @@ All results are visualized using an interactive **Power BI dashboard**.
 
 ---
 
-## ❓ Why This Project Matters
+##  Why This Project Matters
 
 In real-world applications like aviation and manufacturing, machinery failure can lead to:
 
-- Safety hazards
-- Operational downtime
+- Safety hazards  
+- Operational downtime  
 - High repair costs
 
 **Predictive maintenance** using RUL prediction ensures:
-- Machines are serviced **before** failure
-- Operations remain **safe and efficient**
+- Machines are serviced **before** failure  
+- Operations remain **safe and efficient**  
 - Maintenance is **data-driven** and not reactive
 
 This project simulates that process using a real-world industrial dataset and provides both predictive models and business-ready visualizations.
 
 ---
 
-## 🔗 Project Files & Execution
+## Project Files & Execution
 
 All required files are included in this repository for full reproducibility.
 
-### ✅ Included:
-- `preprocessed_rul_data.csv` → Engineered dataset
-- `train_lightgbm.py`, `train_svr.py`, `train_lstm.py` → Training scripts
-- `model_comparison.csv` → MAE, RMSE, R² scores
-- `actual_vs_predicted.csv` → Side-by-side true vs predicted RUL
-- `lstm_predictions.csv` → LSTM results only
+### Included:
+- `preprocessed_rul_data.csv` → Engineered dataset  
+- `train_lightgbm.py`, `train_svr.py`, `train_lstm.py` → Training scripts  
+- `model_comparison.csv` → MAE, RMSE, R² scores  
+- `actual_vs_predicted.csv` → Side-by-side true vs predicted RUL  
+- `lstm_predictions.csv` → LSTM results only  
 - `RUL_dashboard.pbix` → Power BI dashboard
-- ✅ **Google Colab Notebook**: End-to-end execution and output generation  
-  🔗 [`rul_prediction_colab.ipynb`](./notebooks/rul_prediction_colab.ipynb)
+- **Google Colab Notebook**: End-to-end execution and output generation  
+    
 
 ---
 
-## 📦 Dataset: NASA CMAPSS
+## Dataset: NASA CMAPSS
 
-- 100+ simulated engines, each running to failure
-- 21 sensors, 3 operational settings
+- 100+ simulated engines, each running to failure  
+- 21 sensors, 3 operational settings  
 - Target: Remaining Useful Life (RUL)
 
 **Source**:  
-🔗 [NASA Prognostics Data Repository – CMAPSS](https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository)
+[NASA Prognostics Data Repository – CMAPSS](https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository)
 
 ---
 
-## 🎯 Objective
+## Objective
 
 Build ML models that estimate RUL using time-series sensor data and engineered features.  
 Evaluate performance with:
-- **MAE** (Mean Absolute Error)
-- **RMSE** (Root Mean Squared Error)
-- **R²** (Coefficient of Determination)
+- **MAE** (Mean Absolute Error)  
+- **RMSE** (Root Mean Squared Error)  
+- **R²** (Goodness of Fit)
 
 ---
 
-## 🧠 Models and Features
+## Models and Features
 
-### 📊 Features:
-- Rolling means (`window=5`)
-- Rolling std deviation
-- Delta (cycle-to-cycle difference)
-- EMA (Exponential Moving Average)
-- Cycle normalization
+### Features:
+- Rolling means (`window=5`)  
+- Rolling std deviation  
+- Delta (cycle-to-cycle difference)  
+- EMA (Exponential Moving Average)  
+- Cycle normalization  
 
-### 🤖 Models:
-- **LightGBM**: Tree-based, tabular-friendly, interpretable
-- **SVR**: Kernel-based, non-linear regression
+### Models:
+- **LightGBM**: Tree-based, tabular-friendly, interpretable  
+- **SVR**: Kernel-based, non-linear regression  
 - **LSTM**: Sequence model for time-series degradation learning
 
 ---
 
-## 📈 Results Summary
+##  Results Summary
 
-### 🧪 Validation & Holdout Metrics
+### Validation & Holdout Metrics
 
 | Model     | Dataset     | MAE   | RMSE  | R²     |
 |-----------|-------------|--------|--------|--------|
@@ -97,14 +97,11 @@ Evaluate performance with:
 | SVM       | Holdout     | 17.41  | 26.36 | 0.85   |
 | LSTM      | Holdout     | 55.86  | 67.72 | -0.00  |
 
-> ✅ LightGBM consistently outperforms SVM and LSTM  
-> ❌ LSTM underperforms, showing poor generalization on holdout set
-
-📁 See: `model_comparison.csv` and `actual_vs_predicted.csv`
+ See: `model_comparison.csv` and `actual_vs_predicted.csv`
 
 ---
 
-## 📊 Power BI Dashboard
+## Power BI Dashboard
 
 The dashboard presents:
 
@@ -115,11 +112,11 @@ The dashboard presents:
 | 3    | Actual vs Predicted RUL       | Scatter plots: true vs predicted RUL      |
 | 5    | Sensor Insights               | Interactive engine + sensor trends        |
 
-📁 File: `RUL_dashboard.pbix`
+File: `RUL_dashboard.pbix`
 
 ---
 
-## 🧾 Scientific References
+## Scientific References
 
 This project builds on recent research in prognostics and health management:
 
@@ -140,15 +137,27 @@ This project builds on recent research in prognostics and health management:
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
-- **Python**: Pandas, Scikit-learn, LightGBM, PyTorch
-- **Power BI**: Visual storytelling
-- **Jupyter Notebook + Colab**: All-in-one execution
-- **Joblib**: Model saving/loading
+- **Python**: Pandas, Scikit-learn, LightGBM, PyTorch  
+- **Power BI**: Visual storytelling  
+- **Jupyter Notebook + Colab**: All-in-one execution  
+- **Joblib**: Model saving/loading  
 - **Git & GitHub**: Version control
-
+  
 ---
 
+## Acknowledgements
 
+This project was completed with the help of:
+
+- **NASA Prognostics Data Repository**  
+- **Open-source ML tools**: LightGBM, Scikit-learn, PyTorch  
+- **Google Colab** and **Power BI Desktop**  
+- **ChatGPT by OpenAI**, used for:
+  - Structuring and debugging Python scripts  
+  - Designing the evaluation pipeline  
+  - Creating documentation
+
+---
 
