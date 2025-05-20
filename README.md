@@ -128,8 +128,13 @@ This project builds on recent research in prognostics and health management:
    _Reliability Engineering & System Safety_  
    [https://doi.org/10.1016/j.ress.2019.106554](https://doi.org/10.1016/j.ress.2019.106554)
 
-4. **Saxena & Goebel (2008)** – CMAPSS dataset paper  
+4. **Zhang et al. (2019)** – Feature engineering & uncertainty quantification for RUL  
+   _Mechanical Systems and Signal Processing_  
+   [https://doi.org/10.1016/j.ymssp.2019.106587](https://doi.org/10.1016/j.ymssp.2019.106587)
+
+5. **Saxena & Goebel (2008)** – CMAPSS dataset paper  
    [NASA Dataset Link](https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository)
+
 
 ---
 
