@@ -108,7 +108,7 @@ The dashboard presents:
 | 3    | Actual vs Predicted RUL       | Scatter plots: true vs predicted RUL      |
 | 4    | Sensor Insights               | Interactive engine + sensor trends        |
 
-File: `RUL_dashboard.pbix`
+File: `RUL_prediction_dashboard.pbix`
 
 ---
 
