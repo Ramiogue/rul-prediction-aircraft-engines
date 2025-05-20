@@ -4,7 +4,7 @@
 
 ## Executive Summary
 
-This project focuses on predicting the Remaining Useful Life (RUL) of aircraft engines using NASA’s CMAPSS dataset. RUL estimation is crucial for predictive maintenance — enabling industries to detect early signs of failure, optimize maintenance schedules, and avoid costly breakdowns.
+This project focuses on predicting the Remaining Useful Life (RUL) of aircraft engines using NASA’s CMAPSS dataset. RUL estimation is crucial for predictive maintenance, enabling industries to detect early signs of failure, optimize maintenance schedules, and avoid costly breakdowns.
 
 We implemented and compared three models:
 - **LightGBM** (gradient boosting)
@@ -37,12 +37,8 @@ This project simulates that process using a real-world industrial dataset and pr
 All required files are included in this repository for full reproducibility.
 
 ### Included:
-- `preprocessed_rul_data.csv` → Engineered dataset  
-- `train_lightgbm.py`, `train_svr.py`, `train_lstm.py` → Training scripts  
-- `model_comparison.csv` → MAE, RMSE, R² scores  
-- `actual_vs_predicted.csv` → Side-by-side true vs predicted RUL  
-- `lstm_predictions.csv` → LSTM results only  
-- `RUL_dashboard.pbix` → Power BI dashboard
+- `data.txt` → data used for training and testing   
+- `RUL_prediction_dashboard.pbix` → Power BI dashboard
 - **Google Colab Notebook**: End-to-end execution and output generation  
     
 
