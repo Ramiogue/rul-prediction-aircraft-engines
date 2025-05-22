@@ -88,7 +88,7 @@ This project compares three model types to learn from both tabular structure and
   Selected as a baseline nonlinear model. SVR with an RBF kernel provides robustness in capturing complex relationships without requiring deep architectures. It serves as a middle ground between tree models and neural networks.
 
 - LSTM (Long Short-Term Memory)  
-  Chosen to directly model temporal dependencies. LSTM networks are known for handling sequence data and remembering long-term patterns — critical for modeling degradation. Although it underperformed here, it highlights the complexity of time-series generalization with small datasets.
+  Chosen to directly model temporal dependencies. LSTM networks are known for handling sequence data and remembering long-term patterns critical for modeling degradation. Although it underperformed here, it highlights the complexity of time-series generalization with small datasets.
 
 ---
 
