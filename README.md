@@ -96,13 +96,13 @@ This project compares three model types to learn from both tabular structure and
 
 ### Validation and Holdout Metrics
 
-| Model     | Dataset     | MAE   | RMSE  | R²     |
-|-----------|-------------|--------|--------|--------|
-| LightGBM  | Validation  | 14.59  | 21.08 | 0.91   |
-| LightGBM  | Holdout     | 14.39  | 20.63 | 0.91   |
-| SVM       | Validation  | 17.71  | 27.64 | 0.84   |
-| SVM       | Holdout     | 17.41  | 26.36 | 0.85   |
-| LSTM      | Holdout     | 55.86  | 67.72 | -0.00  |
+| Model     | Dataset     | MAE        | RMSE      | R²          |
+|-----------|-------------|------------|-----------|-------------|
+| LightGBM  | Validation  | 14.586393  | 21.080658 | 0.90926767  |
+| LightGBM  | Holdout     | 14.391989  | 20.632263 | 0.90706212  |
+| SVM       | Validation  | 17.714910  | 27.635183 |  0.8440740  |
+| SVM       | Holdout     | 17.409732  | 26.362914 | 0.84826498  |
+| LSTM      | Holdout     | 55.848114  | 67.724222 | -0.00029802 |
 
 See: `model_comparison.csv` and `actual_vs_predicted.csv`
 
