@@ -2,7 +2,7 @@
 
 ---
 
-## ⚠️ June 2025 Update – Data Leakage Fixed
+## ⚠️ 8 June 2025 Update – Data Leakage Fixed
 
 A prior version of this project included data leakage caused by:
 
