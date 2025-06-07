@@ -2,6 +2,20 @@
 
 ---
 
+## ⚠️ June 2025 Update – Data Leakage Fixed
+
+A prior version of this project included data leakage caused by:
+
+- Normalizing features before splitting into training/validation/test sets
+- Calculating RUL before applying rolling/statistical transformations
+
+These issues have been resolved:
+- Data is now split **before** scaling
+- RUL is calculated **after** feature engineering to avoid future data contamination
+- All models were retrained and re-evaluated using a fully **leak-free pipeline**
+
+---
+
 ## Executive Summary
 
 This project focuses on predicting the Remaining Useful Life (RUL) of aircraft engines using NASA’s CMAPSS dataset. RUL estimation is crucial for predictive maintenance, enabling industries to detect early signs of failure, optimize maintenance schedules, and avoid costly breakdowns.
@@ -81,30 +95,28 @@ These features help models capture temporal degradation trends critical for accu
 
 This project compares three model types to learn from both tabular structure and time-dependent behavior in the dataset:
 
-- LightGBM  
-  Chosen for its performance and efficiency on tabular data. It handles feature interactions well and offers fast training and strong generalization. Best suited for structured datasets with engineered features.
+- **LightGBM**  
+  Chosen for its performance and efficiency on tabular data. It handles feature interactions well and offers fast training and strong generalization.
 
-- Support Vector Regression (SVR)  
-  Selected as a baseline nonlinear model. SVR with an RBF kernel provides robustness in capturing complex relationships without requiring deep architectures. It serves as a middle ground between tree models and neural networks.
+- **Support Vector Regression (SVR)**  
+  A baseline nonlinear model. SVR with an RBF kernel captures complex relationships and serves as a middle ground between tree-based and deep models.
 
-- LSTM (Long Short-Term Memory)  
-  Chosen to directly model temporal dependencies. LSTM networks are known for handling sequence data and remembering long-term patterns critical for modeling degradation. Although it underperformed here, it highlights the complexity of time-series generalization with small datasets.
+- **LSTM (Long Short-Term Memory)**  
+  Designed for sequence modeling. While performance was weaker in this case, LSTM captures temporal dependencies and is suited for long-term degradation tracking.
 
 ---
 
-## Results Summary
+## ✅ Results Summary (Leak-Free Evaluation)
 
-### Validation and Holdout Metrics
+| Model     | Dataset     | MAE        | RMSE      | R²           |
+|-----------|-------------|------------|-----------|--------------|
+| LightGBM  | Validation  | 16.37      | 23.72     | 0.8851       |
+| LightGBM  | Holdout     | 16.71      | 23.73     | 0.8770       |
+| SVM       | Validation  | 18.66      | 29.87     | 0.8178       |
+| SVM       | Holdout     | 18.37      | 28.60     | 0.8215       |
+| LSTM      | Holdout     | 55.84      | 67.73     | -0.0005      |
 
-| Model     | Dataset     | MAE        | RMSE      | R²          |
-|-----------|-------------|------------|-----------|-------------|
-| LightGBM  | Validation  | 14.586393  | 21.080658 | 0.90926767  |
-| LightGBM  | Holdout     | 14.391989  | 20.632263 | 0.90706212  |
-| SVM       | Validation  | 17.714910  | 27.635183 |  0.8440740  |
-| SVM       | Holdout     | 17.409732  | 26.362914 | 0.84826498  |
-| LSTM      | Holdout     | 55.848114  | 67.724222 | -0.00029802 |
-
-See: `model_comparison.csv` and `actual_vs_predicted.csv`
+📄 See: `model_comparison.csv` and `actual_vs_predicted.csv`
 
 ---
 
@@ -128,23 +140,19 @@ File: `RUL_prediction_dashboard.pbix`
 This project builds on recent research in prognostics and health management:
 
 1. Babu et al. (2016) – CNN for RUL estimation  
-   Expert Systems with Applications  
    [https://doi.org/10.1016/j.eswa.2016.09.014](https://doi.org/10.1016/j.eswa.2016.09.014)
 
-2. Zheng et al. (2017) – LSTM for Remaining Useful Life  
-   IEEE Transactions on Industrial Electronics  
+2. Zheng et al. (2017) – LSTM for RUL  
    [https://doi.org/10.1109/TIE.2017.2715283](https://doi.org/10.1109/TIE.2017.2715283)
 
 3. Li et al. (2019) – Multi-scale feature extraction for RUL  
-   Reliability Engineering & System Safety  
    [https://doi.org/10.1016/j.ress.2019.106554](https://doi.org/10.1016/j.ress.2019.106554)
 
-4. Zhang et al. (2019) – Feature engineering and uncertainty quantification for RUL  
-   Mechanical Systems and Signal Processing  
+4. Zhang et al. (2019) – Feature engineering & uncertainty quantification  
    [https://doi.org/10.1016/j.ymssp.2019.106587](https://doi.org/10.1016/j.ymssp.2019.106587)
 
-5. Saxena & Goebel (2008) – CMAPSS dataset paper  
-   [NASA Dataset Link](https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository)
+5. Saxena & Goebel (2008) – CMAPSS Dataset Paper  
+   [https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository](https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository)
 
 ---
 
@@ -176,6 +184,3 @@ This project was completed with the help of:
 
 **Name**: Tshepang Ramaoka  
 **Email**: ramaokafelicia@gmail.com
-
----
-
